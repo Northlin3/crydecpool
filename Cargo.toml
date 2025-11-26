@@ -1,6 +1,30 @@
 [package]
 name = "crydecpool"
 version = "0.1.0"
-edition = "2024"
+edition = "2021"
 
 [dependencies]
+# Async runtime
+tokio = { version = "1", features = ["full"] }
+async-trait = "0.1"
+
+# Bitcoin & crypto
+bitcoin = "0.31"
+bitcoin_hashes = "0.13"
+secp256k1 = { version = "0.28", features = ["global-context"] }
+
+# Networking / Stratum V2
+tokio-util = { version = "0.7", features = ["codec"] }
+bytes = "1"
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+
+# Sharechain DB
+sled = "0.34"
+
+# P2P
+libp2p = { version = "0.53", features = ["gossipsub", "mdns", "tokio"] }
+
+# Logging
+tracing = "0.1"
+tracing-subscriber = "0.3"
